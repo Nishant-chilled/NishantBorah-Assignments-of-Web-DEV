@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Responsive Profile Card</title>
+<style>
+  :root{
+    --card-bg:#fff; --text:#111827; --muted:#6b7280;
+    --primary:#2563eb; --primary-hover:#1e4fd1;
+    --radius:16px; --btn-radius:10px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100dvh; display:grid; place-items:center;
+    font-family:system-ui, Segoe UI, Roboto, Helvetica, Arial;
+    background:#f3f4f6; padding:24px; color:var(--text);
+  }
+
+  /* Default: Desktop / Expanded */
+  .card{
+    width: 440px;   /* 350–500px range */
+    background:var(--card-bg);
+    border-radius:var(--radius);
+    box-shadow:0 10px 25px rgba(0,0,0,.08), 0 4px 8px rgba(0,0,0,.05);
+    display:flex; gap:18px; padding:20px; align-items:flex-start;
+  }
+
+  /* Left column: image + name below */
+  .media{
+    display:flex; flex-direction:column; gap:10px;
+    flex-shrink:0; align-items:center;
+  }
+  .media img{
+    width:160px; height:160px;
+    object-fit:cover;
+    border-radius:8px;  /* square corners for desktop */
+    background:#e5e7eb;
+  }
+  .name{
+    margin:0;
+    font-weight:700;
+    font-size:1.125rem;
+  }
+
+  /* Right column */
+  .info{ flex:1; }
+  .desc{
+    margin:0 0 12px; color:var(--muted);
+    line-height:1.35; font-size:.95rem;
+  }
+  .actions{ display:flex; gap:10px; flex-wrap:nowrap; }
+  .button-link{
+    display:inline-block; text-decoration:none; color:#fff;
+    background:var(--primary);
+    padding:10px 14px; border-radius:var(--button-link-radius);
+    font-weight:600; line-height:1;
+    transition:background .2s, transform .08s;
+  }
+  .button-link:hover{ background:var(--primary-hover); transform:translateY(-1px); }
+  .button-link.secondary{ background:#111827; }
+  .button-link.secondary:hover{ background:#0c1220; }
+
+  /* Small screens */
+  @media (max-width: 640px){
+    .card{
+      width:70vw; max-width:520px;
+      flex-direction:column;
+      text-align:center; align-items:center;
+      gap:14px; padding:18px;
+    }
+    .media{ align-items:center; }
+    .media img{
+      width:160px; height:160px;
+      border-radius:50%; /* circular avatar for mobile */
+    }
+    .name{ font-size:1.35rem; }
+    .info{ width:100%; }
+    .actions{
+      flex-direction:column;
+      gap:10px; width:100%;
+    }
+    .button-link{
+      width:90%; display:block; margin:0 auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card" role="region" aria-label="Profile card">
+    <div class="media">
+      <img src="https://placehold.co/160x160?text=Profile" alt="Profile photo">
+      <h2 class="name">Rahul Verma</h2>
+    </div>
+
+    <div class="info">
+      <p class="desc">Web Designer & JavaScript Enthusiast. Loves clean,creative layouts and good coffee!</p>
+      <div class="actions">
+        <a class="button-link" href="mailto:rahul@example.com">Contact</a>
+        <a class="button-link secondary" href="#" target="_blank" rel="noopener">Portfolio</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

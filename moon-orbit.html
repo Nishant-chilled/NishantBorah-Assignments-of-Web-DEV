@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moon Orbit</title>
+  <style>
+    body{
+      margin:0; 
+      height:100vh; 
+      background:#000;
+      display:flex; 
+      justify-content:center; 
+      align-items:center;
+    }
+
+    .space{ 
+        position:relative; 
+        width:420px; 
+        height:420px; }
+
+    /* placed planet at center */
+    .planet{
+      position:absolute; 
+      width:120px; 
+      height:120px; 
+      border-radius:50%;
+      background:deepskyblue;
+      top:50%;
+      left:50%;
+       transform:translate(-50%,-50%);
+    }
+
+    /* for orbit ring + rotation */
+    .orbit{
+      position:absolute; 
+      width:300px;
+      height:300px; 
+      border-radius:50%;
+      top:50%; 
+      left:50%; 
+      transform:translate(-50%,-50%);
+      animation: spin 8s linear infinite; /* clockwise */
+    }
+
+    /* moon sat on the ring at the top; parent rotation makes it revolve */
+    .moon{
+      position:absolute; 
+      width:40px; 
+      height:40px; 
+      border-radius:50%;
+      background:#ffffffc2; 
+      left:50%; 
+      top:-20px; 
+      transform:translateX(-50%);
+    }
+
+    /* clockwise rotation */
+    @keyframes spin{
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); } /* negative = clockwise */
+    }
+  </style>
+</head>
+<body>
+  <div class="space">
+    <div class="planet"></div>
+    <div class="orbit">
+      <div class="moon"></div>
+    </div>
+  </div>
+</body>
+</html>

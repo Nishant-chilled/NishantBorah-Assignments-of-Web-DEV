@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Term 1 Web-Dev Assignments</title>
+  <style>
+    :root{
+      --bg:#787894;
+      --ink:#2da4b7;
+      --btn:#364592;
+      --btn-hover:#4338ca;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color:#111;
+      display:grid;
+      min-height:100vh;
+      place-items:center;
+      padding:24px;
+    }
+    .wrap{
+      width:min(900px, 96vw);
+      background:var(--card);
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      box-shadow:0 6px 20px rgba(0,0,0,.06);
+      padding:28px 22px 28px;
+    }
+    h1{
+      margin:0 0 18px;
+      text-align:center;
+      color:var(--ink);
+      letter-spacing:.5px;
+    }
+    p.note{
+      margin:0 0 14px;
+      text-align:center;
+      font-size:.9rem;
+      color:#6b7280;
+    }
+
+    
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (min-width:700px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    a.btn{
+      display:block;
+      text-decoration:none;
+      text-align:center;
+      padding:14px 18px;
+      background:var(--btn);
+      color:#fff;
+      border-radius:10px;
+      font-weight:600;
+      border:2px solid transparent;
+      transition:all .2s ease;
+    }
+    a.btn:hover{
+      background:var(--btn-hover);
+      transform: translateY(-2px);
+    }
+    a.btn:active{ transform:none; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>MY TERM 1 WEB-DEV ASSIGNMENTS!!!</h1>
+    <p class="note">Click any card to open the assignment.</p>
+
+    <div class="grid">
+      <a class="btn" href="firstpage.html">First Page.html</a>
+      <a class="btn" href="contact_form.html">Form.html</a>
+      <a class="btn" href="weekend_plans.html">List.html</a>
+      <a class="btn" href="movie_collection.html">Table.html</a>
+      <a class="btn" href="about_me.html">Semantic Website Activity.html</a>
+      <a class="btn" href="recipe.html">Recipe.html</a>
+      <a class="btn" href="rectangle.html">Rectangle.html</a>
+      <a class="btn" href="square.html">Square.html</a>
+      <a class="btn" href="circle.html">Circle.html</a>
+      <a class="btn" href="triangle.html">Triangle.html</a>
+      <a class="btn" href="diamond.html">Diamond.html</a>
+      <a class="btn" href="profilecard.html">Profile Card.html</a>
+      <a class="btn" href="dog-gallery.html">Dog Gallery.html</a>
+      <a class="btn" href="ferris-wheel.html">Ferris-wheel.html</a>
+      <a class="btn" href="moon-orbit.html">Moon-orbit.html</a>
+      
+    </div>
+  </main>
+</body>
+</html>
